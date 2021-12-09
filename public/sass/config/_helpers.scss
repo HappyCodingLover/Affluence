@@ -1,0 +1,31 @@
+// Helpers
+
+@for $i from 1 through 5 {
+	.bt-#{$i}, .by-#{$i}, .b-#{$i} {
+		border-top-width: #{$i * 5}rem;
+	}
+	.bb-#{$i}, .by-#{$i}, .b-#{$i} {
+		border-bottom-width: #{$i * 5}rem;
+	}
+	.bl-#{$i}, .bx-#{$i}, .b-#{$i} {
+		border-left-width: #{$i * 5}rem;
+	}
+	.br-#{$i}, .bx-#{$i}, .b-#{$i} {
+		border-right-width: #{$i * 5}rem;
+	}
+}
+
+@for $i from 6 through 10 {
+	.bt-#{$i}, .by-#{$i}, .b-#{$i} {
+		border-top-width: #{$i - 3}rem;
+	}
+	.bb-#{$i}, .by-#{$i}, .b-#{$i} {
+		border-bottom-width: #{$i - 3}rem;
+	}
+	.bl-#{$i}, .bx-#{$i}, .b-#{$i} {
+		border-left-width: #{$i - 3}rem;
+	}
+	.br-#{$i}, .bx-#{$i}, .b-#{$i} {
+		border-right-width: #{$i - 3}rem;
+	}
+}

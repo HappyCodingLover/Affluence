@@ -1,0 +1,193 @@
+.card {
+	margin-bottom: 3rem;
+	border: 1px solid #ddd;
+	border-radius: 0;
+	font-size: 1.4rem;
+	overflow: hidden;
+}
+
+.card-header {
+	@include clearfix;
+	margin: 0;
+	padding: 1.2rem 1.5rem;
+	border-radius: 0;
+	border-color: #ddd;
+	background-color: #f5f5f5;
+	font-weight: 700;
+	line-height: 1.5;
+	text-transform: uppercase;
+
+	.card-edit {
+		margin-top: .1rem;
+		float: right;
+		color: $primary-color;
+		font-size: 1.3rem;
+		font-weight: 400;
+		text-transform: capitalize;
+	}
+
+	&.collapsing {
+		height: auto;
+	}
+
+	a {
+		color: #000;
+	}
+
+	&:hover,
+	&.expanded {
+		&::after,
+		.toggle-button {
+			color: $primary-color;
+		}
+	}
+}
+
+.card-body {
+	min-height: 135px;
+	padding: 2rem 1.5rem;
+	border-top: 0;
+	border-radius: 0;
+
+	a {
+		text-decoration: underline;
+	}
+
+	h4 {
+		margin-bottom: .7rem;
+		color: $light-text;
+	}
+}
+
+.card.card-accordion {
+	margin-bottom: .5rem;
+	padding: 0;
+	border: 0;
+
+	.card-header {
+		cursor: pointer;
+		position: relative;
+		padding-left: 0;
+		padding-right: 25px;
+		background: transparent;
+		font-family: $second-font-family;
+		font-size: 1.6rem;
+		font-weight: 600;
+		letter-spacing: -.025em;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		text-transform: none;
+		white-space: nowrap;
+
+		&:after {
+			content: '\e81b';
+			position: absolute;
+			top: 50%;
+			right: 10px;
+			transform: translateY(-50%);
+			
+			transition: .35s;
+		}
+
+		&.collapsed:after {
+			content: '\e81c';
+			transition: .35s;
+		}
+	}
+
+	.card-body {
+		min-height: 0;
+		padding: 0;
+	}
+
+	p {
+		margin-bottom: .4rem;
+		padding: 1.3rem 0;
+		letter-spacing: 0;
+	}
+}
+
+.box-card {
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 20px 0px;
+	border-radius: 9999px;
+}
+
+.box-card:hover {
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 20px 0px;
+	transform: translateY(-2px);
+}
+
+.user-card {
+	text-align: left;
+
+	.user-card-top {
+		padding: 3rem 3rem 1rem 3rem;
+	}
+
+	.user-card-bottom {
+		padding: 1rem 3rem 1rem 3rem;
+		display: flex;
+		border-top: 1px solid $primary-color-gray;
+	}
+
+	.follows {
+		font-size: 24px;
+		margin-bottom: 0;
+	}
+
+	.text-gray {
+		font-size: 18px;
+		font-weight: 600;
+	}
+}
+
+.tag-card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem 1rem 1rem 1rem;
+	margin-right: 2rem;
+	margin-bottom: 1rem;
+	border-radius: 9999px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 20px 0px;
+
+	&:hover {
+		transform: translateY(-2px);
+	}
+
+	
+	&.tag-lg-card {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}
+
+.bid-card {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 1.5rem 2rem 1.5rem 2rem;
+	margin-bottom: 1rem;
+	border-radius: 1rem;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 20px 0px;
+
+	.bid-card-avatar {
+		margin-right: 1rem;
+	}
+
+	.bid-card-content {
+		display: flex;
+		align-items: center;
+		flex: 1 1 0%;
+		justify-content: space-between;
+
+		.bid-price {
+			font-size: 1.6rem;
+			font-weight: 700;
+		}
+	}
+	
+	.bid-card-link {
+		margin-left: 1.5rem;
+	}
+}

@@ -1,0 +1,133 @@
+.product-countdown-container {
+    display: flex;
+    position: absolute;
+    padding: 8px 13px 6px;
+    justify-content: center;
+	align-items: center;
+    left: -5px;
+    bottom: -5px;
+	letter-spacing: -.01em;
+	visibility: visible;
+    text-transform: uppercase;
+	transition: opacity .3s ease;
+    background: linear-gradient(to right, rgb(12, 80, 255) 0%, rgb(12, 80, 255) 24%, rgb(91, 157, 255) 55.73%, rgb(255, 116, 241) 75%, rgb(255, 116, 241) 100%);
+	z-index: 6;
+	border-radius: 10px;
+	max-width: 133px;
+
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		inset: 6px;
+		z-index: -1;
+		margin: -4px;
+		border-radius: 7px;	
+		background-color: #fff;
+	}
+
+	.label {
+		font-size: 13px;
+    	font-weight: 700;
+		color: rgba(4, 4, 5, 0.6);
+	}
+
+	.product-countdown-title {
+        display: inline-block;
+        color: $primary-color;
+        font-size: 11px;
+        font-weight: 400;
+        margin-bottom: 0;
+        margin-right: 3px;
+	}
+
+	.product-countdown {
+		position: relative;
+		left: auto;
+		right: auto;
+		bottom: auto;
+		z-index: 6;
+		line-height: 1;
+        opacity: 1;
+        color: $primary-color;
+
+		.countdown-amount {
+			display: flex;
+			align-items: center;
+			font-weight: 400;
+			font-size: 1.3rem;
+			line-height: 1;
+			margin-bottom: 0;
+			text-transform: uppercase;
+		}
+	}
+
+	img {
+		max-width: 12px;
+	}
+}
+
+.deal-countdown {
+	display: block;
+    padding: 0;
+    margin-bottom: 2rem;
+	margin-top: -1px;
+    background: transparent;
+    opacity: 1;
+
+	.product-countdown-title {
+		margin-bottom: 1.4rem;
+		font-size: 14px;
+		font-weight: 600;
+		color: #444;
+	}
+
+	.product-countdown {
+		display: flex;
+
+		.countdown-period {
+			display: block;
+			font-size: 10px;
+			font-weight: 400;
+			color: #fff;
+			width: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			letter-spacing: 0.02em;
+		}
+	
+		.countdown-amount {
+			display: block;
+			padding-bottom: 4px;
+			color: #fff;
+			font-weight: 600;
+			font-size: 18px;
+			letter-spacing: -.05em;
+		}
+	}
+
+	.countdown-section {
+		padding: 1em 0;
+		margin-right: 2px;
+		font-size: 1.2rem;
+		line-height: 1;
+		max-width: 64px;
+		width: 100%;
+		text-align: center;
+		background-color: 	$primary-color;
+	}
+
+	b {
+		display: none !important;
+	}
+}
+
+.product-default {
+	.countdown-section,
+	.product-countdown {
+		display: flex;
+		align-items: center;
+		font-size: 13px;
+	}
+}
