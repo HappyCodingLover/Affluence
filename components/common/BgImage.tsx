@@ -39,7 +39,11 @@ const BgImage: React.FC<BgImageProps> = ({
         styleHeight = `${height}px`
     }
     if (size) {
-        if (size == 'small') {
+        if (size == 'ssmall') {
+            styleWidth = '32px'
+            styleHeight = '32px'
+            styleMarginRight = '0.75rem'
+        } else if (size == 'small') {
             styleWidth = '36px'
             styleHeight = '36px'
             styleMarginRight = '1rem'

@@ -10,6 +10,7 @@ interface TippyProps {
     tippyRef?: any,
     theme?: string;
     position?: string;
+    trigger?: string;
     id?: number
 }
 
@@ -20,17 +21,23 @@ const Tippy: React.FC<TippyProps> = ({
     tippyRef,
     theme,
     position,
+    trigger,
     id,
     ...props
   }) => {
+    const styling = {
+        cursor: 'pointer',
+    }
+
     return (
         <Tooltip
             html={tippyRef}
-            position={position == 'top' ? 'top' : (position == 'bottom' ? 'bottom' : (position == 'left' ? 'left' : (position == 'right' ? 'right' : 'top')))}
-            trigger="mouseenter"
-            theme={theme == 'light' ? 'light' : (theme == 'dark' ? 'dark' : (theme == 'transparent' ? 'transparent' : 'light'))}
+            position={position == 'top' ? 'top' : (position == 'left' ? 'left' : (position == 'right' ? 'right' : 'bottom'))}
+            trigger={trigger == 'focus' ? 'focus' : (trigger == 'click' ? 'click' : (trigger == 'manual' ? 'manual' : 'mouseenter'))}
+            theme={theme == 'dark' ? 'dark' : (theme == 'transparent' ? 'transparent' : 'light')}
             interactive
             className={className}
+            style={styling}
             {...props}
         >
             {children}

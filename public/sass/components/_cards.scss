@@ -118,6 +118,7 @@
 }
 
 .user-card {
+	border-radius: 1rem;
 	text-align: left;
 
 	.user-card-top {
@@ -138,6 +139,12 @@
 	.text-gray {
 		font-size: 18px;
 		font-weight: 600;
+	}
+
+	.users-list {
+		> * {
+			margin-right: -1.5rem;
+		}
 	}
 }
 
@@ -189,5 +196,45 @@
 	
 	.bid-card-link {
 		margin-left: 1.5rem;
+	}
+}
+
+.auction-card {
+    position: relative;
+    justify-content: center;
+    display: flex;
+	align-items: center;
+	text-align: center;
+
+	.auction-card-content {
+		position: relative;
+		padding: 2rem 3rem;
+		background-color: $primary-color-light;
+		z-index: 10;
+
+		> div {
+			padding: 0.25rem 0;
+			width: 100%;
+		}
+
+		.auction-price {
+			font-size: 1.6rem;
+			font-weight: 700;
+		}
+	}
+
+	.bg-image {
+		div {
+			margin: auto!important;
+		}
+	}
+
+	.auction-card-divider {
+		position: absolute;
+		z-index: 1;
+		height: 1px;
+		background-color: $primary-color-gray;
+		width: 100%;
+		left: 0px;
 	}
 }
