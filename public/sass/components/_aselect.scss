@@ -1,0 +1,15 @@
+.a-select {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1.4rem;
+    line-height: 1.429;
+    border: 1px solid $primary-color-gray;    
+}
+
+.a-select-list {
+    font-size: 1.4rem;
+    line-height: 1.429;
+    min-width: 280px;
+}

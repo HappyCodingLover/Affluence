@@ -27,8 +27,11 @@
 
 // Components
 @import 'components/alerts';
+@import 'components/artwork-boxes';
+@import 'components/aselect';
 @import 'components/animate';
 @import 'components/banners';
+@import 'components/boxes';
 @import 'components/breadcrumb';
 @import 'components/buttons';
 @import 'components/cards';
@@ -37,7 +40,7 @@
 @import 'components/countdown';
 @import 'components/forms';
 @import 'components/info-boxes';
-// @import 'components/member';
+@import 'components/lazy-load';
 @import 'components/modals';
 @import 'components/page-header';
 @import 'components/popup';
@@ -45,8 +48,8 @@
 @import 'components/product-category';
 @import 'components/tabs';
 @import 'components/tooltips';
-@import 'components/lazy-load';
 @import 'components/toast';
+@import 'components/user-avatar';
 
 // Base
 @import 'base/base';
@@ -57,8 +60,6 @@
 @import 'base/header';
 @import 'base/header/dropdowns';
 @import 'base/header/search';
-// @import 'base/header/popup-menu';
-// @import 'base/header/top-menu';
 @import 'base/header/menu';
 @import 'base/header/menu-vertical';
 @import 'base/header/side-menu';

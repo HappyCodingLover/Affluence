@@ -23,7 +23,6 @@ export function setParallax() {
  * function to scroll window screen
  */
 export function scrollTopHandlder(e) {
-
     if (isEdgeBrowser() || isSafariBrowser()) {
         let pos = window.pageYOffset;
         let timer = setInterval(() => {
@@ -219,4 +218,97 @@ export const countTo = function () {
             }
         }
     }
+}
+
+/* Data Util Functions */
+const { users } = require('./data/users')
+const { artworks } = require('./data/artworks')
+const { priceFilters } = require('./data/price-filter')
+
+export const getArtworks = function ( ) {
+    return artworks
+}
+
+export const getArtwork = function ( slug ) {
+    let artwork = null
+    for (let artwork_index = 0; artwork_index < artworks.length; artwork_index++) {
+        if (artworks[artwork_index].slug == slug) artwork = artworks[artwork_index]
+    }
+    return artwork
+}
+
+export const getOnSaleArtworks = function ( user ) {
+    let onsaleArtworks = []
+    for (let artwork_index = 0; artwork_index < artworks.length; artwork_index++) {
+        if (artworks[artwork_index].status == 'on_sale' && artworks[artwork_index].owned_by == user) onsaleArtworks.push( artworks[artwork_index] )
+    }
+    return onsaleArtworks
+}
+
+export const getOwnedArtworks = function ( user ) {
+    let ownedArtworks = []
+    for (let artwork_index = 0; artwork_index < artworks.length; artwork_index++) {
+        if (artworks[artwork_index].owned_by == user) ownedArtworks.push( artworks[artwork_index] )
+    }
+    return ownedArtworks
+}
+
+export const getCreatedArtworks = function ( slug ) {
+    let createdArtworks = []
+    for (let artwork_index = 0; artwork_index < artworks.length; artwork_index++) {
+        if (artworks[artwork_index].created_by == slug) createdArtworks.push( artworks[artwork_index] )
+    }
+    return createdArtworks
+}
+
+export const getLinkedArtworks = function ( slug ) {
+    let linkedArtworks = []
+    for (let artwork_index = 0; artwork_index < artworks.length; artwork_index++) {
+        if (artworks[artwork_index].linked_to == slug) linkedArtworks.push( artworks[artwork_index] )
+    }
+    return linkedArtworks
+}
+
+export const getUsers = function ( ) {
+    return users
+}
+
+export const getUser = function ( slug ) {
+    let user = null
+    for (let user_index = 0; user_index < users.length; user_index++) {
+        if (users[user_index].slug == slug) user = users[user_index]
+    }
+    return user
+}
+
+export const getUserFollowings = function ( slug ) {
+    let user = null
+    let userFollowings = []
+    for (let user_index = 0; user_index < users.length; user_index++) {
+        if (users[user_index].slug == slug) user = users[user_index]
+    }
+    if (user) {
+        for (let following_index = 0; following_index < user.followings.length; following_index++) {
+            for (let user_index = 0; user_index < users.length; user_index++) {
+                if (users[user_index].slug == user.followings[following_index]) userFollowings.push(users[user_index])
+            }
+        }
+    }
+    return userFollowings
+}
+
+export const getUserFollowingsWithObject = function ( user ) {
+    let userFollowings = []
+    if (user) {
+        for (let following_index = 0; following_index < user.followings.length; following_index++) {
+            for (let user_index = 0; user_index < users.length; user_index++) {
+                if (users[user_index].slug == user.followings[following_index]) userFollowings.push(users[user_index])
+            }
+        }
+    }
+    return userFollowings
+}
+
+export const getPriceFilters = function ( ) {
+    return priceFilters
 }

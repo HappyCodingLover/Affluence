@@ -1,0 +1,29 @@
+// Boxes
+
+.social-box {
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    vertical-align: inherit;
+    flex-direction: column;
+    display: flex;
+
+	.social-btn {		
+		height: 40px;
+		width: 40px;
+		border: 1px solid transparent;
+		-webkit-box-align: center;
+		align-items: center;
+		cursor: pointer;
+		display: flex;
+		border-radius: 40px;
+		justify-content: center;
+	}
+
+	.social-text {
+		margin-top: 0.5rem;
+		font-size: 1.3rem;
+		font-weight: 300;
+	}
+}

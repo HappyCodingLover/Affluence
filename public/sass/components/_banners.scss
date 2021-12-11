@@ -58,6 +58,46 @@
 	}
 }
 
+.banner-section {
+	padding: 3rem 0;
+	background-color: $primary-color-gray;
+
+	&.profile-banner-section {
+		padding: 0;
+		height: 260px;
+		position: relative;
+		display: flex;
+		-webkit-box-align: center;
+		align-items: center;
+		-webkit-box-pack: center;
+		justify-content: center;
+
+		.banner-avatar {
+			position: absolute;
+			bottom: -30px;
+			left: 50%;
+			overflow: hidden;
+			transform: translateX(-50%);
+			z-index: 10;
+		}
+	}
+}
+
+.profile-content-section {
+    flex-flow: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+
+	> * {
+		-webkit-box-pack: center;
+		justify-content: center;
+		-webkit-box-align: center;
+		align-items: center;
+	}
+}
+
 .ibanner {
 	font-size: 10px;
 }

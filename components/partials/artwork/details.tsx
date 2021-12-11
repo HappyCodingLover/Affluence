@@ -21,7 +21,7 @@ export default function Details( { details, className } ) {
                     View metadata
                 </ALink>
                 <ALink className="d-flex align-items-center py-3" href={details.ipfs}>
-                    <IpfsIcon className="mr-3" viewBox="0 0 26 20" width="22" height="22" />
+                    <IpfsIcon className="mr-3"  width="22" height="22" />
                     View on IPFS
                 </ALink>
             </div>

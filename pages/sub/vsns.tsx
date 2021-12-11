@@ -33,7 +33,6 @@ export default function PageNotFound() {
                                 <div className="info-details sort-list d-block">
                                     <div className="d-flex align-items-center justify-content-between mb-3 w-100">
                                         <img src="https://f8n-production.imgix.net/creators/profile/a4i1cnlg4-icon-jpg-4pq97v.jpg" width="300" height="300" alt="thumbnail" />
-
                                         <button type="button" className="btn-default btn-border-light btn-rounded text-dark bg-transparent">Follow</button>
                                     </div>
 

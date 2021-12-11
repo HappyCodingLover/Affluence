@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import Cookie from "js-cookie";
+
 import 'react-image-lightbox/style.css';
 import 'react-toastify/dist/ReactToastify.min.css';
 import 'rc-tree/assets/index.css';

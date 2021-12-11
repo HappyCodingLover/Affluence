@@ -326,10 +326,24 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
 	flex-wrap: wrap;
 }
 
+.flex-direction-column {
+	flex-direction: column;
+}
+
+.flex-grow-1 {
+	flex-grow: 1;
+}
+
 .bg-image {
 	> div {
 		border-radius: 50%;
 	}
+}
+
+.border-hover-0:hover,
+.border-hover-0:active,
+.border-hover-0:focus {
+	border: 0!important;
 }
 
 @keyframes spin {

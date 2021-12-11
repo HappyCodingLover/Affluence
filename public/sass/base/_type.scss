@@ -397,3 +397,68 @@ a:focus {
 		border-radius: #{$i}rem !important;
 	}
 }
+
+.clipboard {
+	display: flex;
+	min-width: 110px;
+	cursor: pointer;
+	align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    background-color: $primary-color-gray;
+    transition: all 0.12s ease-in-out 0s;
+
+	&:hover {
+		background-color: $primary-color-gray1;
+	}
+
+	&:active {
+		transform: scale(0.9);
+	}
+}
+
+.filter-list {
+	margin: 0;
+	max-height: 160px;
+	overflow-y: scroll;
+
+	li {
+		cursor: pointer;
+		padding: 1rem 1.2rem;
+		
+		&:hover {
+			background-color: $primary-color-gray1;
+		}
+	}
+}
+
+.filter-action {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.5rem 1rem 0 1rem;
+	margin-top: 1rem;
+	border-top: 1px solid $primary-color-gray;
+}
+
+.filter-box {
+	font-family: $second-font-family;
+	width: 300px;
+	padding: 1rem;
+	margin: 0;
+	color: $headings-text;
+	font-weight: 600;
+	font-size: 1.4rem;
+	line-height: 1.429;
+	text-align: left;
+
+	&.sale-type-filter {
+		.filter-list {
+			max-height: unset;
+			overflow-y: unset;
+		}
+	}
+}

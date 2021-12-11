@@ -2,13 +2,13 @@ import React from 'react';
 import Link from "next/link";
 import { useRouter } from 'next/router';
 
-interface LinkProps {
+interface ALinkProps {
     className?: string;
     style?: object;
     href?: any;
     id?: number
 }
-const ALink: React.FC<LinkProps> = ({
+const ALink: React.FC<ALinkProps> = ({
     children,
     className,
     style,

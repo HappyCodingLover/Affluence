@@ -4,13 +4,18 @@ import BgImage from '../../common/BgImage';
 
 // Import Settings
 
+import { getUserFollowingsWithObject } from '../../../utils';
+
 export default function UserPopupCard( { user } ) {
+    user['following_users'] = []
+    user['following_users'] = getUserFollowingsWithObject( user )
+
     return (
         <div className="user-card">
             <div className="user-card-top">
                 <div className="position-relative">
                     <div className="">
-                        <ALink href={`/artwork/${user.slug}`}>
+                        <ALink href={`/profile/${user.slug}`}>
                             <BgImage url={user.avatar} color={user.color} bgSize="cover" position="center center" size="mediumn" />
                         </ALink>
                         <div className="pt-3">
@@ -29,8 +34,8 @@ export default function UserPopupCard( { user } ) {
                     <div className="d-flex align-items-center py-3">
                         <h5 className="mb-0 mr-3">Followed by</h5>
                         <div className="d-flex users-list">
-                            {user.followings.map((following, index) => (
-                                <ALink href={`/artwork/${following.slug}`} key={"" + index}>
+                            {user.following_users.map((following, index) => (
+                                <ALink href={`/profile/${following.slug}`} key={"" + index}>
                                     <BgImage url={following.avatar} color={user.color} bgSize="cover" position="center center" size="ssmall" />
                                 </ALink>
                             ))}
@@ -39,11 +44,11 @@ export default function UserPopupCard( { user } ) {
                 </div>
             </div>
             <div className="user-card-bottom">
-                <ALink href={`/artwork/${user.slug}?follows=true`} className="mr-3">
+                <ALink href={`/profile/${user.slug}?follows=true`} className="mr-3">
                     <h5 className="follows">{user.following}</h5>
                     <h6 className="text-gray">Following</h6>
                 </ALink>
-                <ALink href={`/artwork/${user.slug}?follows=true`}>
+                <ALink href={`/profile/${user.slug}?follows=true`}>
                     <h5 className="follows">{user.followers}</h5>
                     <h6 className="text-gray">Followers</h6>
                 </ALink>

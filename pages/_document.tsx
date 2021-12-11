@@ -13,7 +13,7 @@ export default class MyDocument extends Document {
                     <base href="/" />
                     { process.env.NODE_ENV === "production" ? <title>React eCommerce Template</title> : "" }
                     <link rel="icon" href="favicon.png" />
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,500,600,700,800%7CCircular+Std:200,300,400,500,600,700,800%7COswald:300,400,600,700%7CShadows+Into+Light:400" />
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,500,600,700,800%7CShadows+Into+Light:400" />
                     <link rel="stylesheet" type="text/css" href="vendor/bootstrap.min.css" />
                     <link rel="stylesheet" type="text/css" href="vendor/fontawesome-free/css/all.min.css" />
                     <link rel="stylesheet" type="text/css" href="vendor/simple-line-icons/css/simple-line-icons.min.css" />
@@ -21,6 +21,7 @@ export default class MyDocument extends Document {
                 <body>
                     <Main />
                     <script src="js/jquery.min.js"></script>
+                    <script src="js/script.js"></script>
                     <NextScript />
                 </body>
             </Html>

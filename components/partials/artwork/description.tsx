@@ -1,20 +1,14 @@
 // Import Custom Component
-import ALink from '../../common/ALink';
-
-import EtherscanIcon from '../../icons/etherscan';
-import MetadataIcon from '../../icons/metadata';
-import IpfsIcon from '../../icons/ipfs';
-import DotIcon from '../../icons/dot';
-import ShareIcon from '../../icons/share';
 
 // Import Settings
 
 export default function Description( { desc, className } ) {
+    console.log(desc)
     return (
-        <div className={`artwork-description ${className}`}>
+        <div className={`artwork-description ${ className }`}>
             <h2 className="block-title">Description</h2>
-            {desc.paragraphs.map((paragraph, index) => (
-                <p key={"" + index}><div dangerouslySetInnerHTML={{ __html: paragraph }}></div></p>
+            { desc.paragraphs.map((paragraph, index) => (
+                <p dangerouslySetInnerHTML={{ __html: paragraph }} key={"" + index} />
             ))}
             <hr className="my-4"/>
             <p>{ desc.footer_paragraph }</p>

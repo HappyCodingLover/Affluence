@@ -26,7 +26,7 @@ export default function Information( { info } ) {
                         <h5 className="mb-0">Created by</h5>
                         <div className="d-flex">
                             <div className="box-card">
-                                <UserCard user={ info.created_by }/>
+                                <UserCard slug={ info.created_by }/>
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@ export default function Information( { info } ) {
                         <h5 className="mb-0">Owned by</h5>
                         <div className="d-flex">
                             <div className="box-card">
-                                <UserCard user={ info.owned_by }/>
+                                <UserCard slug={ info.owned_by }/>
                             </div>
                         </div>
                     </div>

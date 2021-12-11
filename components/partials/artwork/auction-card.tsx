@@ -9,24 +9,28 @@ import UserPopupCard from './user-popup-card';
 
 // Import Settings
 
+import { getUser } from '../../../utils';
+
 export default function AuctionCard( { auction } ) {
+    let user = getUser( auction.user )
+
     return (
         <>
             {
                 auction.type == 'auction_won' && (
                     <div className="auction-card">
                         <div className="auction-card-content">
-                            <Tippy tippyRef={(<UserPopupCard user={auction.user}/>)}>
-                                <BgImage url={auction.user.avatar} color={auction.user.color} bgSize="cover" position="center center" size="small" />
+                            <Tippy tippyRef={(<UserPopupCard user={ user }/>)}>
+                                <BgImage url={ user.avatar } color={ user.color } bgSize="cover" position="center center" size="small" />
                             </Tippy>
                             <div>
                                 <h5 className="mb-0 d-inline mr-2">Auction won by</h5>
-                                <Tippy tippyRef={(<UserPopupCard user={auction.user}/>)}>
-                                    <ALink href={`/artwork/${auction.user.slug}`}>@{auction.user.slug}</ALink>
+                                <Tippy tippyRef={(<UserPopupCard user={ user }/>)}>
+                                    <ALink href={`/profile/${ user.slug }`}>@{ user.slug }</ALink>
                                 </Tippy>
                             </div>
-                            <div><h5 className="mb-0 d-inline">Sold for {auction.sold_eth} ETH</h5> <span className="auction-price">${auction.sold_usd}</span></div>
-                            <div>{auction.date}</div>
+                            <div><h5 className="mb-0 d-inline">Sold for { auction.sold_eth } ETH</h5> <span className="auction-price">${ auction.sold_usd }</span></div>
+                            <div>{ auction.date }</div>
                         </div>
                         <div className="auction-card-divider"></div>
                     </div>
@@ -35,8 +39,8 @@ export default function AuctionCard( { auction } ) {
             {
                 auction.type != 'auction_won' && (
                     <div className="bid-card">
-                        <ALink href={`/artwork/${auction.user.slug}`} className="bid-card-avatar">
-                            <BgImage url={auction.user.avatar} color={auction.user.color} bgSize="cover" position="center center" size="small" />
+                        <ALink href={`/profile/${ user.slug }`} className="bid-card-avatar">
+                            <BgImage url={ user.avatar } color={ user.color } bgSize="cover" position="center center" size="small" />
                         </ALink>
                         <div className="bid-card-content">
                             <div>
@@ -63,15 +67,15 @@ export default function AuctionCard( { auction } ) {
                                             )
                                         }
                                     </h5>
-                                    <Tippy tippyRef={(<UserPopupCard user={auction.user}/>)}>
-                                        <ALink href="/artwork/litmusearth">@{auction.user.slug}</ALink>
+                                    <Tippy tippyRef={(<UserPopupCard user={ user }/>)}>
+                                        <ALink href="/profile/litmusearth">@{ user.slug }</ALink>
                                     </Tippy>
                                 </div>
                                 <div>{auction.date}</div>
                             </div>
                             {auction.sold_eth && (<div className="bid-price">{auction.sold_eth} ETH</div>)}
                         </div>
-                        <ALink className="bid-card-link" href={auction.etherscan}>
+                        <ALink className="bid-card-link" href={ auction.etherscan }>
                             <GotoIcon height="16" width="16" />
                         </ALink>
                     </div>
