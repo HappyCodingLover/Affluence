@@ -11,6 +11,12 @@ function Slug () {
     const { query: { slug } } = router
     let artwork = getArtwork( slug )
 
+    if (!artwork) {
+        router.push( {
+            pathname: '/404',
+        } );
+    }
+
     return (
         <>
             <VideoBanner video={ artwork.video }/>

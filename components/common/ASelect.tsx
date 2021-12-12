@@ -3,11 +3,14 @@ import React, { useState, useEffect } from 'react';
 import Tippy from './Tippy';
 
 import ArrowDownIcon from '../icons/arrow-down';
+import SortIcon from '../icons/sort';
 
 interface ASelectProps {
     className?: string;
     style?: object;
     selects?: any;
+    icon?: string;
+    iconPos?: string;
     id?: number
 }
 
@@ -16,10 +19,14 @@ const ASelect: React.FC<ASelectProps> = ({
     className,
     style,
     selects,
+    icon,
+    iconPos,
     id,
     ...props
   }) => {
     const [selectValue, setSelectValue] = useState(false);
+
+    if (!iconPos) iconPos = 'right'
 
     useEffect(() => {
         if (!selectValue) {
@@ -56,9 +63,41 @@ const ASelect: React.FC<ASelectProps> = ({
     )
 
     return (
-        <div className="a-select">
-            <Tippy tippyRef={ selectListRef } className="flex-grow-1 d-flex justify-content-between" trigger="click" position="bottom" {...props}>
-                <span>{ selectValue }</span> <ArrowDownIcon width="16" height="16" />
+        <div className={`a-select ${className}`}>
+            <Tippy tippyRef={ selectListRef } className="flex-grow-1 d-flex justify-content-between align-items-center" trigger="click" position="bottom" {...props}>
+                {
+                    iconPos == 'left' && (
+                        <>
+                            {
+                                icon == 'down' && (
+                                    <ArrowDownIcon width="16" height="16" className="mr-2" />
+                                )
+                            }
+                            {
+                                icon == 'sort' && (
+                                    <SortIcon width="16" height="16" className="mr-2" />
+                                )
+                            }
+                        </>
+                    )
+                }
+                <span>{ selectValue }</span>
+                {
+                    iconPos == 'right' && (
+                        <>
+                            {
+                                icon == 'down' && (
+                                    <ArrowDownIcon width="16" height="16" className="ml-2" />
+                                )
+                            }
+                            {
+                                icon == 'sort' && (
+                                    <SortIcon width="16" height="16" className="ml-2" />
+                                )
+                            }
+                        </>
+                    )
+                }
             </Tippy>
         </div>
     )

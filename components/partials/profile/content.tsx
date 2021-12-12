@@ -26,7 +26,7 @@ export default function Content( { user } ) {
             <div className="d-flex mb-2">
                 <h5 className="gradient-title mb-0 mr-3">@{ user.slug }</h5>
                 <div className="clipboard">
-                    <DiamondIcon height="16" width="16" className="mr-2" />
+                    <DiamondIcon height="16" width="16" primaryColor="#6B8CEF" secondaryColor="#6B8CEF" className="mr-2" />
                     <h5 className="clipboard-content mb-0">{ user_address }</h5>
                 </div>
             </div>

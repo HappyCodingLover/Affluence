@@ -8,9 +8,10 @@ export const artworks = [
         "link": "https://etherscan.io/tx/0x38c9dee9faacc1eece3cdf7fa99dd4ccc27a25ccf181f0e8f1a9513b433261ca",
         "created_by": "moses",
         "sold_eth": 1.40,
-        "sold_usd": "6,093.46",
+        "sold_usd": 6093.46,
         "owned_by": "litmusearth",
         "status": "on_sale",
+        "loves": 248,
         "linked_to": "charliedamgood",
         "desc": {
             "paragraphs": [
@@ -45,7 +46,7 @@ export const artworks = [
             {
                 "type": "auction",
                 "user": "litmusearth",
-                "date": "Dec 5, 2021 at 11:52pm",
+                "date": "2021-11-05 23:52:00",
                 "etherscan": "https://etherscan.io/tx/0xe4c5f4fe3c2abad26c96c9802f743ff7fbb956d7afbc65baa26b5ced05f4e598"
             },
             {
@@ -53,40 +54,40 @@ export const artworks = [
                 "user": "litmusearth",
                 "sold_eth": 1.40,
                 "sold_usd": 6093.46,
-                "date": "Dec 5, 2021 at 11:32pm"
+                "date": "2021-11-05 23:32:00",
             },
             {
                 "type": "bid",
                 "user": "litmusearth",
                 "sold_eth": 1.40,
-                "date": "Dec 4, 2021 at 11:43pm",
+                "date": "2021-11-04 23:43:00",
                 "etherscan": "https://etherscan.io/tx/0xcc47252f70315df2c558751aa14ca896b107d0816e3f5fae681c0c3da3464dcf"
             },
             {
                 "type": "bid",
                 "user": "0x1757...af81",
-                "sold_eth": "1.21",
-                "date": "Dec 4, 2021 at 11:20pm",
+                "sold_eth": 1.21,
+                "date": "2021-11-04 23:20:00",
                 "etherscan": "https://etherscan.io/tx/0xcc47252f70315df2c558751aa14ca896b107d0816e3f5fae681c0c3da3464dcf"
             },
             {
                 "type": "bid",
                 "user": "litmusearth",
                 "sold_eth": 1.00,
-                "date": "Dec 4, 2021 at 11:20pm",
+                "date": "2021-11-05 22:36:00",
                 "etherscan": "https://etherscan.io/tx/0x98559b6afe0a75e276b2428195844f0a0c630516a17193ef3f2411cd819e96a8"
             },
             {
                 "type": "list",
                 "user": "moses",
                 "sold_eth": 1.00,
-                "date": "Dec 4, 2021 at 11:00pm",
+                "date": "2021-11-04 23:25:00",
                 "etherscan": "https://etherscan.io/tx/0x864ba9db24337eb11271e158f2bc50eb9fd00ceffa56b59ecc7592b48b57eb29"
             },
             {
                 "type": "mint",
                 "user": "moses",
-                "date": "Dec 1, 2021 at 10:53am",
+                "date": "2021-12-01 10:53:00",
                 "etherscan": "https://etherscan.io/tx/0x38c9dee9faacc1eece3cdf7fa99dd4ccc27a25ccf181f0e8f1a9513b433261ca"
             }
         ],

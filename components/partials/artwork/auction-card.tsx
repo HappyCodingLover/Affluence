@@ -9,7 +9,7 @@ import UserPopupCard from './user-popup-card';
 
 // Import Settings
 
-import { getUser } from '../../../utils';
+import { getUser, priceFormat, getDateTime } from '../../../utils';
 
 export default function AuctionCard( { auction } ) {
     let user = getUser( auction.user )
@@ -29,8 +29,8 @@ export default function AuctionCard( { auction } ) {
                                     <ALink href={`/profile/${ user.slug }`}>@{ user.slug }</ALink>
                                 </Tippy>
                             </div>
-                            <div><h5 className="mb-0 d-inline">Sold for { auction.sold_eth } ETH</h5> <span className="auction-price">${ auction.sold_usd }</span></div>
-                            <div>{ auction.date }</div>
+                            <div><h5 className="mb-0 d-inline">Sold for { priceFormat(auction.sold_eth) } ETH</h5> <span className="auction-price">${ priceFormat(auction.sold_usd) }</span></div>
+                            <div>{ getDateTime(auction.date, '%M %d, %y, at %h:%i%a') }</div>
                         </div>
                         <div className="auction-card-divider"></div>
                     </div>
@@ -71,9 +71,9 @@ export default function AuctionCard( { auction } ) {
                                         <ALink href="/profile/litmusearth">@{ user.slug }</ALink>
                                     </Tippy>
                                 </div>
-                                <div>{auction.date}</div>
+                                <div>{ getDateTime(auction.date, '%M %d, %y, at %h:%i%a') }</div>
                             </div>
-                            {auction.sold_eth && (<div className="bid-price">{auction.sold_eth} ETH</div>)}
+                            {auction.sold_eth && (<div className="bid-price">{ priceFormat(auction.sold_eth) } ETH</div>)}
                         </div>
                         <ALink className="bid-card-link" href={ auction.etherscan }>
                             <GotoIcon height="16" width="16" />

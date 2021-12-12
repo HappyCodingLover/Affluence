@@ -5,6 +5,8 @@ import Tippy from '../../common/Tippy';
 import ALink from '../../common/ALink';
 import ASelect from '../../common/ASelect';
 import ArtworkBox from '../../common/ArtworkBox';
+import ActivityBox from '../../common/ActivityBox';
+import TagIcon from '../../common/TagIcon';
 
 import CategoryFilter from '../popups/category-filter';
 import CollectionsFilter from '../popups/collections-filter';
@@ -22,7 +24,9 @@ import {
     getOnSaleArtworks,
     getOwnedArtworks,
     getCreatedArtworks,
-    getLinkedArtworks
+    getLinkedArtworks,
+    getUserActivities,
+    getActivitiesTags
 } from '../../../utils';
 
 export default function Collections( { user } ) {
@@ -33,8 +37,9 @@ export default function Collections( { user } ) {
     let createdArtworks = getCreatedArtworks( user )
     let likedArtworks = getLinkedArtworks( user )
     
-    let myCollectionss = []
-    let activities = []
+    let myCollections = []
+    let activities = getUserActivities( user )
+    let activitiesTags = getActivitiesTags( activities )
 
     return (
         <section className="profile-collections-section">
@@ -88,29 +93,103 @@ export default function Collections( { user } ) {
                                 </button>
                             </div>
                             <div className="d-flex">
-                                <ASelect selects={ priceSorts } className="p-2"/>
+                                <ASelect selects={ priceSorts } icon="sort" iconPos="left" className="p-3 border-2"/>
                             </div>
+                        </div>
+                        <div className="col-12 mt-2">
+                            {
+                                !!onSaleArtworks.length && onSaleArtworks.map( ( artwork, index ) => (
+                                    <ArtworkBox artwork={artwork} key={ "menu-item" + index } />
+                                ))
+                            }
+                            {
+                                !onSaleArtworks.length && (
+                                    <div className="text-center">No artwork found</div>
+                                )
+                            }
                         </div>
                     </div>
                 </TabPanel>
                 <TabPanel className="tab-pane fade" id="owned">
                     <div className="row">
+                        <div className="col-12 d-flex justify-content-between">
+                            <div className="d-flex">
+                                <Tippy tippyRef={(<CategoryFilter />)} trigger="click" position="bottom">
+                                    <button type="button" className="btn-default btn-border-light btn-rounded text-dark bg-transparent mr-2">
+                                        <CategoryIcon height="16" width="16" className="mr-2"/> Category
+                                    </button>
+                                </Tippy>
+                                <Tippy tippyRef={(<CollectionsFilter />)} trigger="click" position="bottom">
+                                    <button type="button" className="btn-default btn-border-light btn-rounded text-dark bg-transparent mr-2">
+                                        <CollectionsIcon height="16" width="16" className="mr-2"/> Collections
+                                    </button>
+                                </Tippy>
+                                <Tippy tippyRef={(<SaleTypeFilter />)} trigger="click" position="bottom">
+                                    <button type="button" className="btn-default btn-border-light btn-rounded text-dark bg-transparent mr-2">
+                                        <LightningIcon height="16" width="16" className="mr-2"/> Sale Type
+                                    </button>
+                                </Tippy>
+                                <Tippy tippyRef={(<PriceFilter />)} trigger="click" position="bottom">
+                                    <button type="button" className="btn-default btn-border-light btn-rounded text-dark bg-transparent mr-2">
+                                        <DollarIcon height="16" width="16" className="mr-2"/> Price range
+                                    </button>
+                                </Tippy>
+                                <button type="button" className="btn-default border-0 text-dark bg-transparent mr-2">
+                                    Reset
+                                </button>
+                            </div>
+                            <div className="d-flex">
+                                <ASelect selects={ priceSorts } icon="sort" iconPos="left" className="p-3 border-2"/>
+                            </div>
+                        </div>
                         <div className="col-12">
                             {
-                                ownedArtworks.map( ( artwork, index ) => (
+                                !!ownedArtworks.length && ownedArtworks.map( ( artwork, index ) => (
                                     <ArtworkBox artwork={artwork} key={ "menu-item" + index } />
                                 ))
+                            }
+                            {
+                                !ownedArtworks.length && (
+                                    <div className="text-center">No artwork found</div>
+                                )
                             }
                         </div>
                     </div>
                 </TabPanel>
                 <TabPanel className="tab-pane fade" id="created">
                     <div className="row">
+                        <div className="col-12 d-flex justify-content-between">
+                            <div className="d-flex">
+                                <Tippy tippyRef={(<CategoryFilter />)} trigger="click" position="bottom">
+                                    <button type="button" className="btn-default btn-border-light btn-rounded text-dark bg-transparent mr-2">
+                                        <CategoryIcon height="16" width="16" className="mr-2"/> Category
+                                    </button>
+                                </Tippy>
+                                <Tippy tippyRef={(<SaleTypeFilter />)} trigger="click" position="bottom">
+                                    <button type="button" className="btn-default btn-border-light btn-rounded text-dark bg-transparent mr-2">
+                                        <LightningIcon height="16" width="16" className="mr-2"/> Sale Type
+                                    </button>
+                                </Tippy>
+                                <Tippy tippyRef={(<PriceFilter />)} trigger="click" position="bottom">
+                                    <button type="button" className="btn-default btn-border-light btn-rounded text-dark bg-transparent mr-2">
+                                        <DollarIcon height="16" width="16" className="mr-2"/> Price range
+                                    </button>
+                                </Tippy>
+                                <button type="button" className="btn-default border-0 text-dark bg-transparent mr-2">
+                                    Reset
+                                </button>
+                            </div>
+                        </div>
                         <div className="col-12">
                             {
-                                createdArtworks.map( ( artwork, index ) => (
+                                !!createdArtworks.length && createdArtworks.map( ( artwork, index ) => (
                                     <ArtworkBox artwork={artwork} key={ "menu-item" + index } />
                                 ))
+                            }
+                            {
+                                !createdArtworks.length && (
+                                    <div className="text-center">No artwork found</div>
+                                )
                             }
                         </div>
                     </div>
@@ -118,6 +197,16 @@ export default function Collections( { user } ) {
                 <TabPanel className="tab-pane fade" id="mycollection">
                     <div className="row">
                         <div className="col-12">
+                            {
+                                !!likedArtworks.length && likedArtworks.map( ( artwork, index ) => (
+                                    <ArtworkBox artwork={artwork} key={ "menu-item" + index } />
+                                ))
+                            }
+                            {
+                                !likedArtworks.length && (
+                                    <div className="text-center">No artwork found</div>
+                                )
+                            }
                         </div>
                     </div>
                 </TabPanel>
@@ -125,16 +214,41 @@ export default function Collections( { user } ) {
                     <div className="row">
                         <div className="col-12">
                             {
-                                likedArtworks.map( ( artwork, index ) => (
-                                    <ArtworkBox artwork={artwork} key={ "menu-item" + index } />
+                                !!myCollections.length && myCollections.map( ( myCollection, index ) => (
+                                    <></>
                                 ))
+                            }
+                            {
+                                !myCollections.length && (
+                                    <div className="text-center">No collection found</div>
+                                )
                             }
                         </div>
                     </div>
                 </TabPanel>
                 <TabPanel className="tab-pane fade" id="activity">
                     <div className="row">
-                        <div className="col-12">
+                        <div className="col-12 col-md-8">
+                            {
+                                !!activities.length && activities.map( ( activity, index ) => (
+                                    <ActivityBox activity={ activity }/>
+                                ))
+                            }
+                            {
+                                !activities.length && (
+                                    <div className="text-center">No activity found</div>
+                                )
+                            }
+                        </div>
+                        <div className="col-12 col-md-4">
+                            <p className="h3">Filters</p>
+                            <div className="d-flex flex-wrap-wrap">
+                                {activitiesTags.map((tag, index) => (
+                                    <ALink className="tag-card" href={`/tags/${tag}`} key={"" + index}>
+                                        <TagIcon name={ tag.toLowerCase() } width="16" height="16" className="mr-2" /><span className="text-capitalize">{ tag }</span>
+                                    </ALink>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </TabPanel>

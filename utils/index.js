@@ -220,10 +220,19 @@ export const countTo = function () {
     }
 }
 
+export const unionArray = function ( arry1, arry2 ) {
+    let arry = arry1
+    for (var arry_index = 0; arry_index < arry2.length; arry_index++) {
+        if (arry1.indexOf( arry2[arry_index] ) == -1) arry.push(arry2[arry_index])
+    }
+    return arry
+}
+
 /* Data Util Functions */
 const { users } = require('./data/users')
 const { artworks } = require('./data/artworks')
 const { priceFilters } = require('./data/price-filter')
+const { activities } = require('./data/activities')
 
 export const getArtworks = function ( ) {
     return artworks
@@ -311,4 +320,43 @@ export const getUserFollowingsWithObject = function ( user ) {
 
 export const getPriceFilters = function ( ) {
     return priceFilters
+}
+
+export const getActivities = function ( ) {
+    return activities
+}
+
+export const getUserActivities = function ( user ) {
+    let userActivities = []
+    for (let activity_index = 0; activity_index < activities.length; activity_index++) {
+        if (activities[activity_index].user == user) userActivities.push(activities[activity_index])
+    }
+    return userActivities
+}
+
+export const getActivitiesTags = function ( activities ) {
+    let tags = []
+    for (let activity_index = 0; activity_index < activities.length; activity_index++) {
+        tags = unionArray(tags, activities[activity_index].tags);
+    }
+    return tags
+}
+
+/* Math Functions */
+export const priceFormat = function ( price ) {
+    return parseFloat(price).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+}
+
+export const getDateTime = function ( datetime, format = '%m/%d/%y, %h/%i %A' ) {
+    let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    let date = String(datetime).split(' ');
+    let ymd = String(date[0]).split('-');
+    let his = String(date[1]).split(':');
+    let year = parseInt(ymd[0])
+    let month = parseInt(ymd[1] - 1)
+    let day = parseInt(ymd[2])
+    let hour = parseInt(his[0])
+    let minute = parseInt(his[1])
+    let second = parseInt(his[2])
+    return format.replace('%m', month).replace('%M', months[month - 1]).replace('%d', day).replace('%y', year).replace('%h', hour > 12 ? hour - 12 : hour == 0 ? 12 : hour).replace('%i', minute).replace('%A', hour > 12 ? 'PM' : 'AM').replace('%a', hour > 12 ? 'pm' : 'am')
 }

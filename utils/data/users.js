@@ -7,7 +7,7 @@ export const users = [
         "bio": "Interdisciplinary.",
         "website": "www.deviantart.com",
         "followings": [
-            "charliedamgood", "earthtosam", "besaraba", "patrou", "Kinlaw"
+            "charliedamgood", "earthtosam", "besaraba", "patrou", "kinlaw"
         ],
         "following": 4,
         "followers": 360,
@@ -80,8 +80,8 @@ export const users = [
     },
     {
         "avatar": "https://f8n-production.imgix.net/creators/profile/euyu4c2fj-2020-09-07-kinlaw-1278-1-easy-resize-com-jpg-aht4lu.jpg?q=45&w=180&h=180&auto=format%2Ccompress&fit=crop&dpr=2",
-        "name": "Kinlaw",
-        "slug": "Kinlaw",
+        "name": "kinlaw",
+        "slug": "kinlaw",
         "address": "0xE8eC1255a7969142fF12EEcd1826e6E54A134ed7",
         "bio": "she/they<br>Audio Composer, Choreographer, Vocalist + Scientist<br>~Sigh of My Hand series now listed~<br>made in partnership with New Inc/New Museum, Rhizome, and Nokia Bell Labs",
         "followings": [

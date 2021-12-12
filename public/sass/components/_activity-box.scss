@@ -1,0 +1,39 @@
+// Activity Boxes
+
+// # Contents
+// 1. Activity Box Container
+// 2. Activity Box Base
+// 2.1) Icon
+// 2.2) Title
+// 2.3) Description
+// 3. Activity Box Types
+// 3.1) Icon Top
+// 4. Responsive
+
+// # Variables
+
+// 1. Activity Box Container
+// 2. Activity Box Base
+.activity-box {
+    position: relative;
+	width: 100%;
+    border-radius: 1.5rem;
+	border: 1px solid $primary-color-gray;
+	padding: 2rem;
+	margin-bottom: 1.5rem;
+	display: flex;
+	cursor: pointer;
+
+	&:hover {
+		background: $primary-color-gray;
+	}
+
+	.activity-box-avatar {
+		margin-right: 1.5rem;
+	}
+
+	.activity-box-edition {
+		display: flex;
+		padding: 0.75rem 0;
+	}
+}

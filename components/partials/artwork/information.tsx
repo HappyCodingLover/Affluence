@@ -7,6 +7,8 @@ import UserCard from './user-card';
 
 // Import Settings
 
+import { priceFormat } from '../../../utils';
+
 export default function Information( { info } ) {
     return (
         <>
@@ -35,7 +37,7 @@ export default function Information( { info } ) {
                     <div className="px-5">
                         <h5 className="mb-0">Sold for</h5>
                         <h2 className="mb-0">{ info.sold_eth } ETH</h2>
-                        <h5 className="mb-0">${ info.sold_usd }</h5>
+                        <h5 className="mb-0">${ priceFormat(info.sold_usd) }</h5>
                     </div>
                     <div className="px-5">
                         <h5 className="mb-0">Owned by</h5>

@@ -12,6 +12,12 @@ function Profile () {
     const { query: { slug } } = router
     let user = getUser( slug )
 
+    if (!user) {
+        router.push( {
+            pathname: '/404',
+        } );
+    }
+
     return (
         <>
             <Banner user={ user }/>

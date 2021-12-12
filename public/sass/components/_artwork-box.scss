@@ -1,0 +1,96 @@
+// Artwork Boxes
+
+// # Contents
+// 1. Artwork Box Container
+// 2. Artwork Box Base
+// 2.1) Icon
+// 2.2) Title
+// 2.3) Description
+// 3. Artwork Box Types
+// 3.1) Icon Top
+// 4. Responsive
+
+// # Variables
+
+// 1. Artwork Box Container
+// 2. Artwork Box Base
+.artwork-box {
+    position: relative;
+    border-radius: 1.5rem;
+    border: 1px solid $primary-color-gray;
+	width: 20%;
+	background: $primary-color-light;
+
+	.artwork-box-header {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 1.5rem 1.5rem 0 1.5rem;
+
+		.artwork-avatars {
+			display: flex;
+
+			a:not(:first-child) {
+				margin-left: -1rem;
+			}
+		}
+	}
+
+	.artwork-box-content {
+		position: relative;
+		margin: 1.5rem;
+
+		.artwork-user {
+			margin-top: 1.25rem;
+		}
+
+		.artwork-price {
+			margin-top: 1.5rem;			
+		}
+
+		.artwork-actions {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: 1rem;
+		}
+	}
+
+	.artwork-box-shadows {
+		position: absolute;
+		z-index: -1;
+		inset: 0px;
+
+		&:after, &:before {
+			position: absolute;
+			content: "";
+			height: 40px;
+			display: block;
+			background: rgb(255, 255, 255);
+			border-radius: 16px;
+			border: 1px solid rgb(230, 230, 230);
+		}
+
+		&:after {
+			left: 3px;
+			right: 3px;
+			bottom: -3px;
+			z-index: -1;
+		}
+
+		&:before {
+			left: 6px;
+			right: 6px;
+			bottom: -6px;
+			z-index: -2;
+		}
+	}
+}
+
+
+@media (max-width: 767px) {
+	.artwork-box {
+		width: 100%;
+	}
+}

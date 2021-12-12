@@ -2,7 +2,7 @@ import React from 'react';
 
 import BadgeIcon from '../icons/badge';
 
-interface UserBannerProps {
+interface UserAvatarProps {
     className?: string;
     style?: object;
     user?: any;
@@ -11,7 +11,7 @@ interface UserBannerProps {
     size?: string;
     id?: number
 }
-const UserBanner: React.FC<UserBannerProps> = ({
+const UserAvatar: React.FC<UserAvatarProps> = ({
     children,
     className,
     style,
@@ -35,7 +35,12 @@ const UserBanner: React.FC<UserBannerProps> = ({
         badgeHeight = `${parseInt(height) / 4}`
     }
     if (size) {
-        if (size == 'ssmall') {
+        if (size == 'xxsmall') {
+            imgWidth = '16px'
+            imgHeight = '16px'
+            badgeWidth = '8'
+            badgeHeight = '8'
+        } else if (size == 'xsmall') {
             imgWidth = '32px'
             imgHeight = '32px'
             badgeWidth = '12'
@@ -59,10 +64,17 @@ const UserBanner: React.FC<UserBannerProps> = ({
     }
 
     return (
-        <div className={`user-banner ${className}`} { ...props }>
+        <div className={`user-avatar ${className}`} { ...props }>
             <img width={imgWidth} height={imgHeight} src={ user.avatar } />
+            {
+                user.verified && (
+                    <div className="user-badge">
+                        <BadgeIcon primaryColor={ user.avatar_color } secondaryColor="#000000" width={badgeWidth} height={badgeHeight} />
+                    </div>
+                )
+            }
         </div>
     )
 }
 
-export default UserBanner;
+export default UserAvatar;
