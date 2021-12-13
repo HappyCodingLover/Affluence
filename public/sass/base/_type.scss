@@ -185,6 +185,14 @@ a:focus {
 	background-color: $primary-color !important;
 }
 
+.bg-blue {
+	background-color: $primary-color-blue !important;
+}
+
+.bg-blue-hover:hover {
+	background-color: $primary-color-blue !important;
+}
+
 .bg-secondary {
 	background-color: $secondary-color !important;
 }
@@ -225,6 +233,14 @@ a:focus {
 	color: $primary-color !important;
 }
 
+.text-blue {
+	color: $primary-color-blue !important;
+}
+
+.text-blue-hover:hover {
+	color: $primary-color-blue !important;
+}
+
 .text-secondary {
 	color: $secondary-color !important;
 }
@@ -247,6 +263,22 @@ a:focus {
 
 .text-white-hover:hover {
 	color: #fff !important;
+}
+
+.text-material {
+	border-width: 0px 0px 2px;
+	border-bottom-color: $primary-color-gray;
+	outline: none;
+    display: block;
+	width: 100%;
+	padding: 0.5rem 0;
+}
+
+.text-ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 // 2.3) Line Height

@@ -1,0 +1,13 @@
+.file-upload {
+    border-radius: 1rem;
+    border: 1px dashed $primary-color-gray;
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    button {
+        margin-top: 1rem;
+    }
+}

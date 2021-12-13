@@ -62,7 +62,7 @@ const TagIcon: React.FC<TagIconProps> = ({
             }
             {
                 (name == 'like' || name == 'love' || name == 'likes' || name == 'loves') && (
-                    <LoveIcon height={ height } width={ width } fill={ fill } primaryColor={ primaryColor } secondaryColor={ secondaryColor } className={ className } { ...props } />
+                    <LoveIcon height={ height } width={ width } fill="none" primaryColor={ primaryColor } secondaryColor={ secondaryColor } className={ className } { ...props } />
                 )
             }
             {

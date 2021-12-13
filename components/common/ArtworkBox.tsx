@@ -38,7 +38,7 @@ const ArtworkBox: React.FC<ArtworkBoxProps> = ({
     }
 
     return (
-        <div className={className ? `artwork-box ${className}` : 'artwork-box'} id={ id ? '' + id : '' } style={ style } { ...props }>
+        <div className={`artwork-box ${ className ? className : '' }`} id={ id ? '' + id : '' } style={ style } { ...props }>
             <div className="artwork-box-header">
                 <div className="artwork-avatars">
                     <ALink href={`/profile/${created_user.slug}`}>
@@ -77,7 +77,7 @@ const ArtworkBox: React.FC<ArtworkBoxProps> = ({
                         }
                     </div>
                     <div className="artwork-like">
-                        <LoveIcon width="16" height="16" /> { artwork.loves }
+                        <LoveIcon width="16" height="16" fill="none" /> { artwork.loves }
                     </div>
                 </div>
             </div>

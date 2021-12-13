@@ -1,7 +1,8 @@
 export const priceFilters = [
     {
         "image": "images/icons/ETH.png",
-        "name": "ETH"
+        "name": "ETH",
+        "value": 4011.55
     },
     {
         "image": "images/icons/WETH.svg",

@@ -59,7 +59,7 @@ const UserBanner: React.FC<UserBannerProps> = ({
     }
 
     return (
-        <div className={`user-banner ${className}`} { ...props }>
+        <div className={`user-banner ${ className ? className : '' }`} { ...props }>
             <img width={imgWidth} height={imgHeight} src={ user.avatar } />
         </div>
     )

@@ -32,7 +32,7 @@ const ActivityBox: React.FC<ActivityBoxProps> = ({
     let to_user = getUser( last_edition.to )
     
     return (
-        <div className={className ? `activity-box ${className}` : 'activity-box'} id={ id ? '' + id : '' } style={ style } { ...props }>
+        <div className={`activity-box ${ className ? className : '' }`} id={ id ? '' + id : '' } style={ style } { ...props }>
             <div className="activity-box-avatar">
                 <UserBanner user={ user } size="mediumn" />
             </div>

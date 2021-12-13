@@ -31,8 +31,14 @@
 		.artwork-avatars {
 			display: flex;
 
-			a:not(:first-child) {
-				margin-left: -1rem;
+			a {
+				&:hover {
+					transform: translateY(-0.5rem);
+				}
+
+				&:not(:first-child) {
+					margin-left: -1rem;
+				}
 			}
 		}
 	}
@@ -42,18 +48,29 @@
 		margin: 1.5rem;
 
 		.artwork-user {
+			font-size: 1.75rem;
 			margin-top: 1.25rem;
 		}
 
 		.artwork-price {
-			margin-top: 1.5rem;			
+			margin-top: 0.75rem;
 		}
 
 		.artwork-actions {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			margin-top: 1rem;
+			margin-top: 0.25rem;
+			font-size: 1.6rem;
+			
+			.artwork-bid {
+				cursor: pointer;
+				color: $primary-color-blue;
+			}
+
+			.artwork-like {
+				cursor: pointer;
+			}
 		}
 	}
 

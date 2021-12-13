@@ -64,12 +64,12 @@ const UserAvatar: React.FC<UserAvatarProps> = ({
     }
 
     return (
-        <div className={`user-avatar ${className}`} { ...props }>
-            <img width={imgWidth} height={imgHeight} src={ user.avatar } />
+        <div className={`user-avatar ${ className ? className : '' }`} { ...props }>
+            <img width={ imgWidth } height={ imgHeight } src={ user.avatar } />
             {
                 user.verified && (
                     <div className="user-badge">
-                        <BadgeIcon primaryColor={ user.avatar_color } secondaryColor="#000000" width={badgeWidth} height={badgeHeight} />
+                        <BadgeIcon primaryColor={ user.avatar_color } secondaryColor="#000000" width={ badgeWidth } height={ badgeHeight } />
                     </div>
                 )
             }

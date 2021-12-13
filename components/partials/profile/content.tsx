@@ -1,5 +1,3 @@
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-
 // Import Custom Component
 import Tippy from '../../common/Tippy';
 import ALink from '../../common/ALink';

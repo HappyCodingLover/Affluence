@@ -1,0 +1,23 @@
+.put-on-marketplace {
+    .btn-with-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        align-items: center;
+        padding: 3rem 4rem;
+        border-radius: 2rem;
+        border: 1px solid $primary-color-gray;
+        max-width: 100%;
+        
+        cursor: pointer;
+
+        &.active {
+            border-color: $primary-color-dark;
+        }
+
+        &:disabled {
+            cursor: no-drop;
+        }
+    }
+}

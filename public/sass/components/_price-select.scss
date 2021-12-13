@@ -1,0 +1,39 @@
+.price-select {
+    .price-select-head {
+        border-width: 0px 0px 2px;
+        min-height: 48px;
+        border-style: solid;
+        border-bottom-color: $primary-color-gray;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        transition: all 0.12s ease-in-out 0s;
+        
+        input {
+            background: transparent;
+            border-width: 0px;
+            outline: none;
+        }
+
+        .a-select {
+            margin-left: 8px;
+            vertical-align: inherit;
+            max-width: 100%;
+            min-height: 0px;
+            min-width: 0px;
+            flex-shrink: 0;
+            flex-direction: column;
+            flex-basis: auto;
+            display: flex;
+            -webkit-box-align: stretch;
+            align-items: stretch;
+            max-width: 100px;
+        }
+    }
+    
+    .price-select-content {
+        margin-top: 1rem;
+    }
+}

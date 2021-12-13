@@ -11,6 +11,7 @@ interface ASelectProps {
     selects?: any;
     icon?: string;
     iconPos?: string;
+    callbackFunc?: any;
     id?: number
 }
 
@@ -21,6 +22,7 @@ const ASelect: React.FC<ASelectProps> = ({
     selects,
     icon,
     iconPos,
+    callbackFunc,
     id,
     ...props
   }) => {
@@ -32,14 +34,17 @@ const ASelect: React.FC<ASelectProps> = ({
         if (!selectValue) {
             if (typeof selects[0] == 'object') {
                 setSelectValue( selects[0].name )
+                if (callbackFunc) callbackFunc( selects[0].name )
             } else {
                 setSelectValue( selects[0] )
+                if (callbackFunc) callbackFunc( selects[0] )
             }
         }
     }, [selectValue, selects])
 
     function changeSelect( value ) {
         setSelectValue( value )
+        if (callbackFunc) callbackFunc( value )
     }
 
     const selectListRef = (
@@ -63,7 +68,7 @@ const ASelect: React.FC<ASelectProps> = ({
     )
 
     return (
-        <div className={`a-select ${className}`}>
+        <div className={`a-select ${ className ? className : '' }`}>
             <Tippy tippyRef={ selectListRef } className="flex-grow-1 d-flex justify-content-between align-items-center" trigger="click" position="bottom" {...props}>
                 {
                     iconPos == 'left' && (

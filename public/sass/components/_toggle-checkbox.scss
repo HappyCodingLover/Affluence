@@ -1,0 +1,30 @@
+.toggle-checkbox {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    border-radius: 40px;
+    background-color: $primary-color-gray;
+    border: 1px solid $primary-color-gray;
+    cursor: pointer;
+    display: flex;
+
+    .toggle {
+        position: absolute;
+        top: 3px;
+        left: 4px;
+        background-color: $primary-color-light;
+        width: 12px;
+        height: 12px;
+        border-radius: 12px;
+        transition: all 0.12s ease-in-out 0s;
+    }
+
+    &.toggled {
+        background-color: $primary-color-dark;
+        border: 1px solid $primary-color-dark;
+
+        .toggle {
+            transform: translateX(20px);
+        }
+    }
+}

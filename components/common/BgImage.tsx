@@ -69,7 +69,7 @@ const BgImage: React.FC<BgImageProps> = ({
     }
 
     return (
-        <div className="bg-image">
+        <div className={`bg-image ${ className ? className : '' }`}>
             <div style={styling} className={ className } { ...props }>
                 { children }
             </div>

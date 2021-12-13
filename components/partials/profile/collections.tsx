@@ -142,7 +142,7 @@ export default function Collections( { user } ) {
                                 <ASelect selects={ priceSorts } icon="sort" iconPos="left" className="p-3 border-2"/>
                             </div>
                         </div>
-                        <div className="col-12">
+                        <div className="col-12 mt-2">
                             {
                                 !!ownedArtworks.length && ownedArtworks.map( ( artwork, index ) => (
                                     <ArtworkBox artwork={artwork} key={ "menu-item" + index } />
@@ -180,7 +180,7 @@ export default function Collections( { user } ) {
                                 </button>
                             </div>
                         </div>
-                        <div className="col-12">
+                        <div className="col-12 mt-2">
                             {
                                 !!createdArtworks.length && createdArtworks.map( ( artwork, index ) => (
                                     <ArtworkBox artwork={artwork} key={ "menu-item" + index } />
