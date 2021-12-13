@@ -91,29 +91,31 @@ const PutOnMarketplace: React.FC<PutOnMarketplaceProps> = ({
       })
     }
 
-    function changeName( value ) {
+    function changeName( e ) {
       setFormData({
         ...formData,
-        'name': value
+        'name': e.target.value
       })
     }
 
-    function changeDescription( value ) {
+    function changeDescription( e ) {
       setFormData({
         ...formData,
-        'description': value
+        'description': e.target.value
       })
     }
 
-    function changeRoyalties( value ) {
-      formData.royalties = value
-      setFormData( formData )
-    }
-
-    function changeNumberOfCopies( value ) {
+    function changeRoyalties( e ) {
       setFormData({
         ...formData,
-        'number_of_copies': value
+        'royalties': e.target.value
+      })
+    }
+
+    function changeNumberOfCopies( e ) {
+      setFormData({
+        ...formData,
+        'number_of_copies': e.target.value
       })
     }
 
@@ -124,24 +126,24 @@ const PutOnMarketplace: React.FC<PutOnMarketplaceProps> = ({
       })
     }    
 
-    function changeSize( value ) {
+    function changeSize( e ) {
       setFormData({
         ...formData,
-        'size': value
+        'size': e.target.value
       })
     }
 
-    function changeModel( value ) {
+    function changeModel( e ) {
       setFormData({
         ...formData,
-        'model': value
+        'model': e.target.value
       })
     }
 
-    function changeImageDescription( value ) {
+    function changeImageDescription( e ) {
       setFormData({
         ...formData,
-        'image_description': value
+        'image_description': e.target.value
       })
     }
 
@@ -257,7 +259,7 @@ const PutOnMarketplace: React.FC<PutOnMarketplaceProps> = ({
         <div className="row mt-3">
           <div className="col-md-12">
             <h4>Description (Optional)</h4>
-            <input className="text-material form-control" type="text" value={ formData.name } placeholder='e. g. "After purchasing you’ll be able to get the real T-Shirt"' onChange={ changeDescription } />
+            <input className="text-material form-control" type="text" value={ formData.description } placeholder='e. g. "After purchasing you’ll be able to get the real T-Shirt"' onChange={ changeDescription } />
             With preserved line-breaks
           </div>
         </div>
