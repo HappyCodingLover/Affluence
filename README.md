@@ -1,1 +1,1 @@
-# rarible-react
+# Rarible.com Frontend Clone
